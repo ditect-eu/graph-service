@@ -1,0 +1,36 @@
+server:
+  port: 8701
+sync:
+  cron: "* * * * * *"
+keycloak:
+  url: http://localhost:9080/auth
+  user: testuser
+  password: testpass
+  realm: master
+  clientId: testclient
+  clientSecret: e0289fb9-9d1f-4ee5-9e9b-30cc0e6d9540
+central-repository:
+  host: "localhost"
+  port: 8080
+  metric-by-date-path: "api/v1/metric/date"
+json-ld:
+  context: |
+    {
+      "@context": {
+            "ditect": "http://www.ditect.eu/",
+            "obo": "http://purl.obolibrary.org/obo/",
+            "schema": "http://schema.org/",
+            "ditect:instrumentName": {
+                "@type": "@id"
+            },
+            "schema:country": {
+                "@type": "@id"
+            },
+            "ditect:typeOfAnalysis": {
+                "@type": "@id"
+            },
+            "schema:creator": {
+                "@type": "@id"
+            }
+        }
+    }
